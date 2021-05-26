@@ -1,23 +1,205 @@
 package tictactoe.Game;
 
 import tictactoe.AI.EasyComputerPlayer;
+import tictactoe.AI.HardComputerPlayer;
 import tictactoe.AI.MediumComputerPlayer;
 import tictactoe.Board.Board;
 import tictactoe.Player.Player;
 
 public class Game {
 
-    private Board board;
-    private Player player;
-    private EasyComputerPlayer easyComputerPlayer;
-    private MediumComputerPlayer mediumComputerPlayer;
+    private final Board board;
+    private final Player player;
+    private final EasyComputerPlayer easyComputerPlayer;
+    private final MediumComputerPlayer mediumComputerPlayer;
+    private final HardComputerPlayer hardComputerPlayer;
 
-    public Game() {
+    public Game(Board board,
+                Player player,
+                EasyComputerPlayer easyComputerPlayer,
+                MediumComputerPlayer mediumComputerPlayer,
+                HardComputerPlayer hardComputerPlayer) {
+        this.board = board;
+        this.player = player;
+        this.easyComputerPlayer = easyComputerPlayer;
+        this.mediumComputerPlayer = mediumComputerPlayer;
+        this.hardComputerPlayer = hardComputerPlayer;
+    }
+
+    public void userVsHard(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            player.makeMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void hardVsUser(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            player.makeMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void easyVsHard(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"easy\"");
+            easyComputerPlayer.easyAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void hardVsEasy(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"easy\"");
+            easyComputerPlayer.easyAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void mediumVsHard(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"medium\"");
+            mediumComputerPlayer.mediumAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void hardVsMedium(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"medium\"");
+            mediumComputerPlayer.mediumAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
+    }
+
+    public void hardVsHard(char[][] gameData) {
+        boolean firstIteration = true;
+
+        while (true) {
+            if (firstIteration) {
+                board.printBoard(gameData);
+                firstIteration = false;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'X');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("X wins") || gameState(gameData).equals("Draw")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+            System.out.println("Making move level \"hard\"");
+            hardComputerPlayer.hardAIMove(gameData, 'O');
+            board.printBoard(gameData);
+            if (gameState(gameData).equals("O wins")) {
+                System.out.println(gameState(gameData));
+                break;
+            }
+        }
     }
 
     public void userVsUser(char[][] gameData) {
-        board = new Board();
-        player = new Player();
         boolean firstIteration = true;
 
         while (true) {
@@ -41,8 +223,6 @@ public class Game {
     }
 
     public void easyVsEasy(char[][] gameData) {
-        board = new Board();
-        easyComputerPlayer = new EasyComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -68,9 +248,6 @@ public class Game {
     }
 
     public void userVsEasy(char[][] gameData) {
-        board = new Board();
-        player = new Player();
-        easyComputerPlayer = new EasyComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -95,9 +272,6 @@ public class Game {
     }
 
     public void easyVsUser(char[][] gameData) {
-        board = new Board();
-        player = new Player();
-        easyComputerPlayer = new EasyComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -122,9 +296,6 @@ public class Game {
     }
 
     public void userVsMedium(char[][] gameData) {
-        board = new Board();
-        player = new Player();
-        mediumComputerPlayer = new MediumComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -149,9 +320,6 @@ public class Game {
     }
 
     public void mediumVsUser(char[][] gameData) {
-        board = new Board();
-        player = new Player();
-        mediumComputerPlayer = new MediumComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -176,9 +344,6 @@ public class Game {
     }
 
     public void easyVsMedium(char[][] gameData) {
-        board = new Board();
-        easyComputerPlayer = new EasyComputerPlayer();
-        mediumComputerPlayer = new MediumComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -204,9 +369,6 @@ public class Game {
     }
 
     public void mediumVsEasy(char[][] gameData) {
-        board = new Board();
-        easyComputerPlayer = new EasyComputerPlayer();
-        mediumComputerPlayer = new MediumComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -232,8 +394,6 @@ public class Game {
     }
 
     public void mediumVsMedium(char[][] gameData) {
-        board = new Board();
-        mediumComputerPlayer = new MediumComputerPlayer();
         boolean firstIteration = true;
 
         while (true) {
@@ -258,63 +418,63 @@ public class Game {
         }
     }
 
-    public String gameState(char[][] inputData) {
+    public String gameState(char[][] gameData) {
         String gameState = "";
         boolean xWin = false;
         boolean oWin = false;
 
-        //X WIN
+        //X win
 
-        if (inputData[0][0] == 'X' && inputData[0][1] == 'X' && inputData[0][2] == 'X') {
+        if (gameData[0][0] == 'X' && gameData[0][1] == 'X' && gameData[0][2] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[1][0] == 'X' && inputData[1][1] == 'X' && inputData[1][2] == 'X') {
+        } else if (gameData[1][0] == 'X' && gameData[1][1] == 'X' && gameData[1][2] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[2][0] == 'X' && inputData[2][1] == 'X' && inputData[2][2] == 'X') {
+        } else if (gameData[2][0] == 'X' && gameData[2][1] == 'X' && gameData[2][2] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[0][0] == 'X' && inputData[1][0] == 'X' && inputData[2][0] == 'X') {
+        } else if (gameData[0][0] == 'X' && gameData[1][0] == 'X' && gameData[2][0] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[0][1] == 'X' && inputData[1][1] == 'X' && inputData[2][1] == 'X') {
+        } else if (gameData[0][1] == 'X' && gameData[1][1] == 'X' && gameData[2][1] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[0][2] == 'X' && inputData[1][2] == 'X' && inputData[2][2] == 'X') {
+        } else if (gameData[0][2] == 'X' && gameData[1][2] == 'X' && gameData[2][2] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[0][0] == 'X' && inputData[1][1] == 'X' && inputData[2][2] == 'X') {
+        } else if (gameData[0][0] == 'X' && gameData[1][1] == 'X' && gameData[2][2] == 'X') {
             gameState = "X wins";
             xWin = true;
-        } else if (inputData[0][2] == 'X' && inputData[1][1] == 'X' && inputData[2][0] == 'X') {
+        } else if (gameData[0][2] == 'X' && gameData[1][1] == 'X' && gameData[2][0] == 'X') {
             gameState = "X wins";
             xWin = true;
         }
 
         //O win
 
-        if (inputData[0][0] == 'O' && inputData[0][1] == 'O' && inputData[0][2] == 'O') {
+        if (gameData[0][0] == 'O' && gameData[0][1] == 'O' && gameData[0][2] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[1][0] == 'O' && inputData[1][1] == 'O' && inputData[1][2] == 'O') {
+        } else if (gameData[1][0] == 'O' && gameData[1][1] == 'O' && gameData[1][2] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[2][0] == 'O' && inputData[2][1] == 'O' && inputData[2][2] == 'O') {
+        } else if (gameData[2][0] == 'O' && gameData[2][1] == 'O' && gameData[2][2] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[0][0] == 'O' && inputData[1][0] == 'O' && inputData[2][0] == 'O') {
+        } else if (gameData[0][0] == 'O' && gameData[1][0] == 'O' && gameData[2][0] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[0][1] == 'O' && inputData[1][1] == 'O' && inputData[2][1] == 'O') {
+        } else if (gameData[0][1] == 'O' && gameData[1][1] == 'O' && gameData[2][1] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[0][2] == 'O' && inputData[1][2] == 'O' && inputData[2][2] == 'O') {
+        } else if (gameData[0][2] == 'O' && gameData[1][2] == 'O' && gameData[2][2] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[0][0] == 'O' && inputData[1][1] == 'O' && inputData[2][2] == 'O') {
+        } else if (gameData[0][0] == 'O' && gameData[1][1] == 'O' && gameData[2][2] == 'O') {
             gameState = "O wins";
             oWin = true;
-        } else if (inputData[0][2] == 'O' && inputData[1][1] == 'O' && inputData[2][0] == 'O') {
+        } else if (gameData[0][2] == 'O' && gameData[1][1] == 'O' && gameData[2][0] == 'O') {
             gameState = "O wins";
             oWin = true;
         }
@@ -323,9 +483,9 @@ public class Game {
 
         int emptyCells = 0;
         if (!xWin && !oWin) {
-            for (int i = 0; i < inputData.length; i++) {
-                for (int j = 0; j < inputData[0].length; j++) {
-                    if (inputData[i][j] != 'X' && inputData[i][j] != 'O') {
+            for (int i = 0; i < gameData.length; i++) {
+                for (int j = 0; j < gameData[0].length; j++) {
+                    if (gameData[i][j] != 'X' && gameData[i][j] != 'O') {
                         emptyCells++;
                     }
                 }

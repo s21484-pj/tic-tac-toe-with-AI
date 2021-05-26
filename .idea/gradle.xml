@@ -12,6 +12,10 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Tic-Tac-Toe with AI/task" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/IntBinaryOperation" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Shape hierarchy" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Abstract class/Users and WebSites" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Account" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Book" />
             <option value="$PROJECT_DIR$/Topics/Getters and setters/Getting the fullname" />
@@ -20,6 +24,11 @@
             <option value="$PROJECT_DIR$/Topics/Hiding and overriding/Theory" />
             <option value="$PROJECT_DIR$/Topics/Inheritance/Classes for Hospital" />
             <option value="$PROJECT_DIR$/Topics/Inheritance/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Account Service" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Area of a circle" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Compact strings with AsciiCharSequence" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Mutable geometric shapes" />
+            <option value="$PROJECT_DIR$/Topics/Interface/Theory" />
             <option value="$PROJECT_DIR$/Topics/Multiple constructors/Employee" />
             <option value="$PROJECT_DIR$/Topics/Multiple constructors/Movie" />
             <option value="$PROJECT_DIR$/Topics/Multiple constructors/Phone" />
@@ -33,8 +42,16 @@
             <option value="$PROJECT_DIR$/Topics/Package/Getting input" />
             <option value="$PROJECT_DIR$/Topics/Package/Sorting arrays" />
             <option value="$PROJECT_DIR$/Topics/Package/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Polymorphism/Find mistake" />
+            <option value="$PROJECT_DIR$/Topics/Polymorphism/Publication and its subclasses" />
+            <option value="$PROJECT_DIR$/Topics/Polymorphism/Theory" />
             <option value="$PROJECT_DIR$/Topics/Random/Find the seed" />
             <option value="$PROJECT_DIR$/Topics/Random/Theory" />
+            <option value="$PROJECT_DIR$/Topics/Recursion/Alternating Fibonacci numbers" />
+            <option value="$PROJECT_DIR$/Topics/Recursion/K-combination" />
+            <option value="$PROJECT_DIR$/Topics/Recursion/N-th power" />
+            <option value="$PROJECT_DIR$/Topics/Recursion/Number of decompositions" />
+            <option value="$PROJECT_DIR$/Topics/Recursion/Theory" />
             <option value="$PROJECT_DIR$/Topics/The keyword super/Employees" />
             <option value="$PROJECT_DIR$/Topics/The keyword super/Fix the non-compiled hierarchy" />
             <option value="$PROJECT_DIR$/Topics/The keyword super/Theory" />
